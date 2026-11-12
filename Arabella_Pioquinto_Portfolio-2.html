@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Arabella P. Pioquinto's personal student portfolio.">
+<title>Arabella P. Pioquinto | Portfolio</title>
+<style>
+:root{--bg:#f7f7fc;--card:#fff;--ink:#20213a;--muted:#696b83;--primary:#7057dc;--accent:#b58cf5;--line:#e8e5f2;--shadow:0 16px 45px #33236b12}
+body.dark{--bg:#111225;--card:#1c1d35;--ink:#f5f2ff;--muted:#bcb9d0;--line:#34334f;--shadow:0 16px 45px #0004}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:82px}body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.65;transition:.2s}
+a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}.wrap{width:min(1080px,92%);margin:auto}
+header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav{height:70px;display:flex;align-items:center;justify-content:space-between}.brand{font-size:1.2rem;font-weight:900;letter-spacing:-.5px}.brand span{color:var(--primary)}
+.links{display:flex;gap:23px}.links a{font-weight:700;color:var(--muted);font-size:.94rem}.links a:hover{color:var(--primary)}
+.navright{display:flex;gap:8px}.smallbtn,.menubtn{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:9px 12px;border-radius:11px}.menubtn{display:none}
+.hero{padding:86px 0 70px;display:grid;grid-template-columns:1.3fr .7fr;gap:45px;align-items:center}.pill{display:inline-block;background:#7057dc18;color:var(--primary);padding:6px 13px;border-radius:30px;font-weight:800;font-size:.84rem}
+h1{font-size:clamp(2.6rem,6vw,4.6rem);line-height:1.08;letter-spacing:-2.5px;margin:18px 0}.shine{background:linear-gradient(100deg,var(--primary),var(--accent));background-clip:text;color:transparent}
+.hero p{color:var(--muted);font-size:1.08rem;max-width:600px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.btn{border:1px solid var(--line);padding:11px 17px;border-radius:12px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:.2s;background:var(--card);color:var(--ink)}.btn:hover{transform:translateY(-2px)}.primary{background:var(--primary);color:white;border-color:var(--primary)}
+.profile{background:var(--card);border:1px solid var(--line);border-radius:25px;padding:28px;text-align:center;box-shadow:var(--shadow)}.avatar{height:145px;width:145px;border-radius:50%;margin:0 auto 18px;background:linear-gradient(135deg,var(--primary),var(--accent));display:grid;place-items:center;color:white;font-size:2.6rem;font-weight:900;border:7px solid var(--bg)}.profile h2{margin:0}.profile p{margin:2px;color:var(--muted)}
+section{padding:58px 0}.heading{margin-bottom:25px}.heading small{color:var(--primary);font-weight:900;letter-spacing:2px;text-transform:uppercase}.heading h2{font-size:2rem;margin:3px 0;letter-spacing:-1px}.heading p{color:var(--muted);margin:0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.card{padding:22px;background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}.card h3{margin:0 0 7px}.card p{margin:0;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}.tag{font-size:.8rem;background:#7057dc18;color:var(--primary);padding:4px 10px;border-radius:30px;font-weight:800}
+.project{display:flex;flex-direction:column;min-height:230px}.project p{flex:1}.project a{color:var(--primary);font-weight:800;margin-top:18px}
+.contact{padding:30px;border-radius:22px;border:1px solid var(--line);background:linear-gradient(120deg,#7057dc18,#b58cf518);display:flex;align-items:center;justify-content:space-between;gap:20px}.contact p{color:var(--muted);margin:3px 0}
+footer{padding:24px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}.foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;opacity:0;transition:.2s;z-index:20}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:55px}.profile{max-width:390px;width:100%;margin:auto}.grid{grid-template-columns:1fr 1fr}.links{display:none;position:absolute;top:70px;left:0;right:0;padding:17px 4%;background:var(--card);border-bottom:1px solid var(--line);flex-direction:column;gap:14px}.links.open{display:flex}.menubtn{display:block}}
+@media(max-width:520px){.grid{grid-template-columns:1fr}.contact{align-items:flex-start;flex-direction:column}.heading h2{font-size:1.7rem}}
+</style>
+</head>
+<body>
+<header><nav class="wrap">
+<a class="brand" href="#home">Arabella<span>.</span></a>
+<div class="links" id="links"><a href="#home">Home</a><a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div>
+<div class="navright"><button class="smallbtn" id="theme" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button><button class="menubtn" id="menu" aria-label="Open navigation" aria-expanded="false">☰</button></div>
+</nav></header>
+<main>
+<div class="wrap hero" id="home">
+<div><span class="pill">✦ Welcome to my portfolio</span>
+<h1>Hi, I'm <span class="shine">Arabella P. Pioquinto</span></h1>
+<p>I'm a student who is passionate about learning, improving my skills, and exploring the world of technology. Welcome to my personal portfolio!</p>
+<div class="actions"><a class="btn primary" href="#projects">Explore My Work ↗</a><a class="btn" href="#contact">Contact Me</a></div></div>
+<div class="profile"><div class="avatar">AP</div><h2>Arabella P. Pioquinto</h2><p>Student Portfolio</p><div class="tags" style="justify-content:center"><span class="tag">Creative</span><span class="tag">Learner</span><span class="tag">Dedicated</span></div></div>
+</div>
+<section id="about"><div class="wrap"><div class="heading"><small>Who I am</small><h2>About Me</h2><p>Get to know me a little better.</p></div>
+<div class="grid">
+<article class="card"><h3>👩 Personal Information</h3><p><b>Name:</b> Arabella P. Pioquinto<br><b>Age:</b> 21 years old<br><b>Birthday:</b> November 24, 2004<br><b>Address:</b> Pandan, Ligao City</p></article>
+<article class="card"><h3>💜 About Me</h3><p>I am a student who enjoys learning new things and developing my knowledge and abilities. I am willing to improve and gain more experience.</p></article>
+<article class="card"><h3>🎯 My Goal</h3><p>My goal is to finish my studies, strengthen my skills, and use what I learn to create helpful and meaningful projects.</p></article>
+</div></div></section>
+<section id="education"><div class="wrap"><div class="heading"><small>My background</small><h2>Educational Background</h2><p>Schools where I completed my studies.</p></div>
+<div class="grid">
+<article class="card"><h3>🏫 Elementary</h3><p>Pandan, Ligao City</p></article>
+<article class="card"><h3>🎓 High School</h3><p>Ligao National High School</p></article>
+<article class="card"><h3>📚 Current Education</h3><p>Add your current college or school name, course, and year level here.</p></article>
+</div></div></section>
+<section id="skills"><div class="wrap"><div class="heading"><small>What I'm learning</small><h2>My Skills & Interests</h2><p>Skills and interests I continue to develop.</p></div>
+<div class="grid">
+<article class="card"><h3>🌐 Web Design</h3><p>Learning how to create and style websites using HTML and CSS.</p></article>
+<article class="card"><h3>💻 Technology</h3><p>Interested in computers, digital tools, and useful applications.</p></article>
+<article class="card"><h3>✨ Personal Skills</h3><p>Communication, creativity, teamwork, and willingness to learn.</p></article>
+</div></div></section>
+<section id="projects"><div class="wrap"><div class="heading"><small>What I've worked on</small><h2>My Projects</h2><p>Sample project descriptions. Replace or update these with your actual school projects.</p></div>
+<div class="grid">
+<article class="card project"><span class="pill">Web System</span><h3>Digital Queue & Appointment System</h3><p>A proposed system that helps students schedule appointments and monitor their queue for school administrative services.</p><div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div><a href="#contact">Ask me about this project ↗</a></article>
+<article class="card project"><span class="pill">Web Application</span><h3>Calculator App</h3><p>A calculator application created as a practice project for basic programming and interactive website features.</p><div class="tags"><span class="tag">JavaScript</span><span class="tag">Practice</span></div><a href="#contact">Ask me about this project ↗</a></article>
+<article class="card project"><span class="pill">Coming Soon</span><h3>Future Project</h3><p>More projects and learning experiences will be added to my portfolio as I continue to grow.</p><div class="tags"><span class="tag">Learning</span></div><a href="#contact">Contact me ↗</a></article>
+</div></div></section>
+<section id="contact"><div class="wrap"><div class="heading"><small>Get in touch</small><h2>Contact Me</h2><p>Feel free to connect with me.</p></div>
+<div class="contact"><div><h2>Let's connect!</h2><p>My email: <span id="emailLabel">Add your email address</span></p></div><div class="actions" style="margin:0"><button class="btn primary" id="emailBtn">✉ Send Email</button><button class="btn" id="copyBtn">▣ Copy Email</button><a class="btn" id="githubBtn" href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a></div></div></div></section>
+</main>
+<footer><div class="wrap foot"><span>© <span id="year"></span> Arabella P. Pioquinto</span><a href="#home">Back to top ↑</a></div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+// PERSONALIZE THESE TWO VALUES BEFORE PUBLISHING:
+const EMAIL = "your.email@example.com";
+const GITHUB_URL = "https://github.com/your-username";
+const byId = id => document.getElementById(id);
+byId("year").textContent = new Date().getFullYear();
+byId("emailLabel").textContent = EMAIL;
+byId("githubBtn").href = GITHUB_URL;
+function toast(message){byId("toast").textContent=message;byId("toast").classList.add("show");setTimeout(()=>byId("toast").classList.remove("show"),2200)}
+byId("theme").addEventListener("click",()=>{document.body.classList.toggle("dark");const dark=document.body.classList.contains("dark");byId("theme").textContent=dark?"☀️":"🌙";byId("theme").setAttribute("aria-label",dark?"Switch to light mode":"Switch to dark mode")});
+byId("menu").addEventListener("click",()=>{const opened=byId("links").classList.toggle("open");byId("menu").textContent=opened?"✕":"☰";byId("menu").setAttribute("aria-expanded",String(opened))});
+document.querySelectorAll("#links a").forEach(a=>a.addEventListener("click",()=>{byId("links").classList.remove("open");byId("menu").textContent="☰";byId("menu").setAttribute("aria-expanded","false")}));
+byId("emailBtn").addEventListener("click",()=>{if(EMAIL==="your.email@example.com"){toast("Please add your email address in the HTML first.");return}location.href="mailto:"+EMAIL+"?subject="+encodeURIComponent("Portfolio inquiry")});
+byId("copyBtn").addEventListener("click",async()=>{if(EMAIL==="your.email@example.com"){toast("Please add your email address in the HTML first.");return}try{await navigator.clipboard.writeText(EMAIL);toast("Email copied!")}catch(e){const t=document.createElement("textarea");t.value=EMAIL;document.body.appendChild(t);t.select();document.execCommand("copy");t.remove();toast("Email copied!")}});
+</script>
+</body></html>
